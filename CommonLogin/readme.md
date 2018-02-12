@@ -3,6 +3,8 @@ If you want a better general understanding of Oauth2, you can read more here: ht
 
 The concept is that you redirect a user to our Oauth2 service, once the user has gone through authentication on our service we will automatically redirect them back to a callback URL with an authorization token. You can use this authorization token to retrieve an access token; it is essential that you make this call in the backend of your application, so you do not expose your secret key. Once you retrieved an access_token, you should store this as it will be your way to identify the currently logged in user by using it to request our service.
 
+Once you receive `client_id` and secret from Bonnier, you will also receive the URL to the service. The service is established on each domain, so ex. if you work on `www.project.com` the domain we give you will, most likely, be `login.project.com` and all URL's below are all relativ to that.
+
 ## Authorization Flow
 Once a client has been created and given to you by Bonnier, you can use the client ID and secret to request authorization codes and access tokens from your application.
 
