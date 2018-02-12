@@ -1,5 +1,5 @@
 # CommonLogin Integration Documentation
-If you want a better general understanding of Oauth2 you can read more here: https://oauth.net/2/
+If you want a better general understanding of Oauth2, you can read more here: https://oauth.net/2/
 
 ## Authorization Flow
 Once a client has been created and given to you by Bonnier, you can use the client ID and secret to request authorization codes and access tokens from your application.
@@ -11,7 +11,7 @@ A typical flow goes through three steps.
 3. Refreshing Access Tokens
 
 ### 1. Redirecting For Authorization
-Once the user initiate a login flow by clicking a login button in your application, then you should make a redirect request to `/oauth/authorize` route like so:
+Once the user initiates a login flow by clicking a login button in your application, then you should make a redirect request to `/oauth/authorize` route like so:
 
 ```php
 Route::get('/redirect', function () {
@@ -81,7 +81,7 @@ This `/oauth/token` route will return a JSON response containing `access_token`,
 
 
 ## Requesting User Data
-Once you have acquired an `access_token` you can use it to request the user to whom it belongs. This can be done by requesting `/oauth/user`
+Once you have acquired an `access_token`, you can use it to request the user to whom it belongs. This can be done by requesting `/oauth/user`
 
 ```php
 $http = new GuzzleHttp\Client;
