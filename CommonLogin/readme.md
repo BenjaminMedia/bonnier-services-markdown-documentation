@@ -1,4 +1,5 @@
 # CommonLogin Integration Documentation
+If you want a better general understanding of Oauth2 you can read more here: https://oauth.net/2/
 
 ## Authorization Flow
 Once a client has been created and given to you by Bonnier, you can use the client ID and secret to request authorization codes and access tokens from your application.
