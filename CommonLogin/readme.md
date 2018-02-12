@@ -1,6 +1,4 @@
-#CommonLogin Integration Documentation
-
-
+# CommonLogin Integration Documentation
 
 ## Authorization Flow
 Once a client has been created and given to you by Bonnier, you can use the client ID and secret to request authorization codes and access tokens from your application.
@@ -11,7 +9,7 @@ A typical flow goes through three steps.
 2. Converting Authorization Code to Access Token
 3. Refreshing Access Tokens
 
-###1. Redirecting For Authorization
+### 1. Redirecting For Authorization
 Once the user initiate a login flow by clicking a login button in your application, then you should make a redirect request to `/oauth/authorize` route like so:
 
 ```php
@@ -28,7 +26,7 @@ Route::get('/redirect', function () {
 });
 ```
 
-###2. Converting Authorization Codes To Access Tokens
+### 2. Converting Authorization Codes To Access Tokens
 If the user approves the authorization request, they will be redirected back to your application. You should then issue a POST request to request an access token. The request should include the authorization code that was issued in the callback from when the user approved the authorization request. In this example, we'll use the Guzzle HTTP library to make the POST request:
 
 ```php
@@ -60,7 +58,7 @@ This `/oauth/token` route will return a JSON response containing `access_token`,
 }
 ```
 
-###3. Refreshing Tokens
+### 3. Refreshing Tokens
 A token lasts for 15 days, you will need to refresh access tokens via the refresh token that was provided together with the issued access token above. In this example, we'll use the Guzzle HTTP library to refresh the token:
 
 ```php
@@ -81,7 +79,7 @@ return json_decode((string) $response->getBody(), true);
 This `/oauth/token` route will return a JSON response containing `access_token`, `refresh_token`, and `expires_in` attributes. The `expires_in` attribute contains the number of seconds until the access token expires.
 
 
-##Requesting User Data
+## Requesting User Data
 Once you have acquired an `access_token` you can use it to request the user to whom it belongs. This can be done by requesting `/oauth/user`
 
 ```php
@@ -123,5 +121,5 @@ This will return an user object like the following
 }
 ```
 
-##Security and how to use state
+## Security and how to use state
 Please carefully read this: https://auth0.com/docs/protocols/oauth2/oauth-state
