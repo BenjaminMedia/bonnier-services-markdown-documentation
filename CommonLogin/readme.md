@@ -90,14 +90,7 @@ Once you have acquired an `access_token`, you can use it to request the user to 
 ```php
 $http = new GuzzleHttp\Client;
 
-$response = $http->post('http://your-app.com/oauth/token', [
-    'form_params' => [
-        'grant_type' => 'refresh_token',
-        'refresh_token' => 'the-refresh-token',
-        'client_id' => 'client-id',
-        'client_secret' => 'client-secret',
-        'scope' => '',
-    ],
+$response = $http->post('http://your-app.com/oauth/user', [
     'headers' => [
 	    'authorization' => 'Bearer {access_token}'
     ]
